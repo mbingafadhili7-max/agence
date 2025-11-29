@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MV EL-SHADDAI AYIVUGWE MSON JAUNE - Agence de Voyage en Bateau</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- En-tête -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>MV EL-SHADDAI AYIVUGWE MSON JAUNE</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#destinations">Destinations</a></li>
+                    <li><a href="#tarifs">Tarifs</a></li>
+                    <li><a href="#offres">Offres</a></li>
+                    <li><a href="#reservation">Réservation</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Section Accueil -->
+    <section id="accueil" class="hero">
+        <div class="hero-content">
+            <h2>Voyagez en Bateau avec Élégance</h2>
+            <p>Découvrez des destinations exceptionnelles avec MV EL-SHADDAI</p>
+            <a href="#reservation" class="btn">Réserver maintenant</a>
+        </div>
+    </section>
+
+    <!-- Section Destinations -->
+    <section id="destinations" class="section">
+        <div class="container">
+            <h2>Nos Destinations</h2>
+            <div class="destinations-grid" id="destinations-container">
+                <!-- Les destinations seront chargées dynamiquement -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Tarifs -->
+    <section id="tarifs" class="section">
+        <div class="container">
+            <h2>Nos Tarifs</h2>
+            <div class="tarifs-grid" id="tarifs-container">
+                <!-- Les tarifs seront chargés dynamiquement -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Offres -->
+    <section id="offres" class="section">
+        <div class="container">
+            <h2>Offres Spéciales</h2>
+            <div class="offres-grid" id="offres-container">
+                <!-- Les offres seront chargées dynamiquement -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Réservation -->
+    <section id="reservation" class="section">
+        <div class="container">
+            <h2>Réservez Votre Voyage</h2>
+            <form id="reservation-form">
+                <div class="form-group">
+                    <label for="nom">Nom complet</label>
+                    <input type="text" id="nom" name="nom" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="telephone">Téléphone</label>
+                    <input type="tel" id="telephone" name="telephone" required>
+                </div>
+                <div class="form-group">
+                    <label for="destination">Destination</label>
+                    <select id="destination" name="destination" required>
+                        <option value="">Sélectionnez une destination</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="date">Date de voyage</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="nombre">Nombre de personnes</label>
+                    <input type="number" id="nombre" name="nombre" min="1" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message supplémentaire</label>
+                    <textarea id="message" name="message" rows="4"></textarea>
+                </div>
+                <button type="submit" class="btn">Réserver</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>Contactez-Nous</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Informations de contact</h3>
+                    <p><strong>Email:</strong> sikatendajacques02@gmail.com</p>
+                    <p><strong>Téléphone:</strong> +243 XX XXX XXXX</p>
+                    <p><strong>Adresse:</strong> [Adresse de l'agence]</p>
+                </div>
+                <div class="contact-form">
+                    <h3>Envoyez-nous un message</h3>
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="contact-nom">Nom</label>
+                            <input type="text" id="contact-nom" name="nom" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-email">Email</label>
+                            <input type="email" id="contact-email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-sujet">Sujet</label>
+                            <input type="text" id="contact-sujet" name="sujet" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-message">Message</label>
+                            <textarea id="contact-message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Envoyer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Commentaires -->
+    <section id="commentaires" class="section">
+        <div class="container">
+            <h2>Commentaires de nos clients</h2>
+            <div class="commentaires-container" id="commentaires-container">
+                <!-- Les commentaires seront chargés dynamiquement -->
+            </div>
+            <div class="ajout-commentaire">
+                <h3>Ajouter un commentaire</h3>
+                <form id="commentaire-form">
+                    <div class="form-group">
+                        <label for="commentaire-nom">Nom</label>
+                        <input type="text" id="commentaire-nom" name="nom" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="commentaire-email">Email</label>
+                        <input type="email" id="commentaire-email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="commentaire-message">Commentaire</label>
+                        <textarea id="commentaire-message" name="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Publier</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pied de page -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 MV EL-SHADDAI AYIVUGWE MSON JAUNE. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="js/database.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

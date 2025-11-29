@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administration - MV EL-SHADDAI</title>
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <div class="login-container" id="login-container">
+        <div class="login-form">
+            <h2>Connexion Administrateur</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="username">Nom d'utilisateur</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Mot de passe</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="btn">Se connecter</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="admin-container" id="admin-container" style="display: none;">
+        <header class="admin-header">
+            <h1>Administration MV EL-SHADDAI</h1>
+            <button id="logout-btn" class="btn">Déconnexion</button>
+        </header>
+
+        <div class="admin-content">
+            <nav class="admin-nav">
+                <ul>
+                    <li><a href="#gestion-destinations" class="nav-link active">Destinations</a></li>
+                    <li><a href="#gestion-tarifs" class="nav-link">Tarifs</a></li>
+                    <li><a href="#gestion-offres" class="nav-link">Offres</a></li>
+                    <li><a href="#gestion-commentaires" class="nav-link">Commentaires</a></li>
+                    <li><a href="#gestion-reservations" class="nav-link">Réservations</a></li>
+                    <li><a href="#personnalisation" class="nav-link">Personnalisation</a></li>
+                </ul>
+            </nav>
+
+            <div class="admin-sections">
+                <!-- Section Gestion des Destinations -->
+                <section id="gestion-destinations" class="admin-section active">
+                    <h2>Gestion des Destinations</h2>
+                    <div class="form-container">
+                        <h3>Ajouter une nouvelle destination</h3>
+                        <form id="destination-form">
+                            <div class="form-group">
+                                <label for="destination-nom">Nom de la destination</label>
+                                <input type="text" id="destination-nom" name="nom" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="destination-description">Description</label>
+                                <textarea id="destination-description" name="description" rows="4" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="destination-image">Image (URL)</label>
+                                <input type="text" id="destination-image" name="image" required>
+                            </div>
+                            <button type="submit" class="btn">Ajouter</button>
+                        </form>
+                    </div>
+                    <div class="list-container">
+                        <h3>Destinations existantes</h3>
+                        <div id="destinations-list">
+                            <!-- Liste des destinations -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section Gestion des Tarifs -->
+                <section id="gestion-tarifs" class="admin-section">
+                    <h2>Gestion des Tarifs</h2>
+                    <div class="form-container">
+                        <h3>Modifier les tarifs</h3>
+                        <form id="tarif-form">
+                            <div class="form-group">
+                                <label for="tarif-destination">Destination</label>
+                                <select id="tarif-destination" name="destination" required>
+                                    <option value="">Sélectionnez une destination</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="tarif-prix">Prix (€)</label>
+                                <input type="number" id="tarif-prix" name="prix" min="0" step="0.01" required>
+                            </div>
+                            <button type="submit" class="btn">Mettre à jour</button>
+                        </form>
+                    </div>
+                    <div class="list-container">
+                        <h3>Tarifs actuels</h3>
+                        <div id="tarifs-list">
+                            <!-- Liste des tarifs -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section Gestion des Offres -->
+                <section id="gestion-offres" class="admin-section">
+                    <h2>Gestion des Offres</h2>
+                    <div class="form-container">
+                        <h3>Ajouter une nouvelle offre</h3>
+                        <form id="offre-form">
+                            <div class="form-group">
+                                <label for="offre-titre">Titre de l'offre</label>
+                                <input type="text" id="offre-titre" name="titre" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="offre-description">Description</label>
+                                <textarea id="offre-description" name="description" rows="4" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="offre-reduction">Réduction (%)</label>
+                                <input type="number" id="offre-reduction" name="reduction" min="0" max="100" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="offre-image">Image (URL)</label>
+                                <input type="text" id="offre-image" name="image" required>
+                            </div>
+                            <button type="submit" class="btn">Ajouter</button>
+                        </form>
+                    </div>
+                    <div class="list-container">
+                        <h3>Offres existantes</h3>
+                        <div id="offres-list">
+                            <!-- Liste des offres -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section Gestion des Commentaires -->
+                <section id="gestion-commentaires" class="admin-section">
+                    <h2>Gestion des Commentaires</h2>
+                    <div class="list-container">
+                        <h3>Commentaires des clients</h3>
+                        <div id="commentaires-list">
+                            <!-- Liste des commentaires -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section Gestion des Réservations -->
+                <section id="gestion-reservations" class="admin-section">
+                    <h2>Gestion des Réservations</h2>
+                    <div class="list-container">
+                        <h3>Réservations en attente</h3>
+                        <div id="reservations-list">
+                            <!-- Liste des réservations -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section Personnalisation -->
+                <section id="personnalisation" class="admin-section">
+                    <h2>Personnalisation du Site</h2>
+                    <div class="form-container">
+                        <h3>Modifier l'apparence du site</h3>
+                        <form id="personnalisation-form">
+                            <div class="form-group">
+                                <label for="couleur-principale">Couleur principale</label>
+                                <input type="color" id="couleur-principale" name="couleur-principale" value="#1a5276">
+                            </div>
+                            <div class="form-group">
+                                <label for="couleur-secondaire">Couleur secondaire</label>
+                                <input type="color" id="couleur-secondaire" name="couleur-secondaire" value="#3498db">
+                            </div>
+                            <div class="form-group">
+                                <label for="image-fond">Image de fond (URL)</label>
+                                <input type="text" id="image-fond" name="image-fond">
+                            </div>
+                            <div class="form-group">
+                                <label for="logo">Logo (URL)</label>
+                                <input type="text" id="logo" name="logo">
+                            </div>
+                            <button type="submit" class="btn">Appliquer les changements</button>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/database.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>
